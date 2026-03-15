@@ -1,0 +1,4 @@
+# Ignore private keys
+*.pem
+keys/
+private_key.pem

@@ -106,16 +106,32 @@ def download():
         f.write(data)
 
     return send_file("storage/decrypted_file.txt", as_attachment=True)
+@app.route('/view_encrypted')
+def view_encrypted():
+    try:
+        with open('storage/encrypted_file.bin', 'rb') as f:
+            data = f.read()
+
+        # show only first part (for readability)
+        return data[:200].hex()
+
+    except:
+        return "No encrypted file found"
 
 # ---------------- ATTACK DEMO ----------------
 
 @app.route('/attack')
 def attack():
+    try:
+        with open('storage/encrypted_file.bin', 'rb') as f:
+            data = f.read()
 
-    with open("storage/encrypted_file.bin","rb") as f:
-        data = f.read()
+        encrypted_data = data[:200].hex()
 
-    return render_template("attack.html",data=data)
+    except:
+        encrypted_data = "No file found"
+
+    return render_template('attack.html', encrypted_data=encrypted_data)
 
 # ---------------- RUN SERVER ----------------
 

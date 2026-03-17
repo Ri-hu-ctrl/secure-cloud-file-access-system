@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Secure Cloud Login</title>
-<link rel="stylesheet" href="/static/style.css">
+    <title>Secure Cloud Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="box">
+<div class="container">
+    <h1>🔐 Secure Cloud</h1>
+    <p class="subtitle">Login to continue</p>
 
-<h2>Secure Cloud Login</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="👤 Username" required>
+        <input type="password" name="password" placeholder="🔑 Password" required>
 
-<form method="POST">
-
-<input type="text" name="username" placeholder="Username">
-
-<input type="password" name="password" placeholder="Password">
-
-<button type="submit">Login</button>
-
-</form>
-
+        <button type="submit">Login</button>
+    </form>
 </div>
 
 </body>

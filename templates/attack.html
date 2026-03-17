@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <h2>⚠️ Attacker View</h2>
 
-<head>
-<title>Attack Simulation</title>
-<link rel="stylesheet" href="/static/style.css">
-</head>
+    <p>Attacker tries to open encrypted file...</p>
 
-<body>
+    <pre style="background:#eee; padding:10px; border-radius:8px;">
+        {{ encrypted_data }}
+    </pre>
 
-<h2>Attacker Accessing Encrypted File</h2>
-
-<p>Encrypted Data:</p>
-
-<textarea rows="15" cols="80">{{data}}</textarea>
-
-</body>
-
-</html>
+    <p style="color:red;">
+        ❌ Data is unreadable without decryption key
+    </p>
+</div>
